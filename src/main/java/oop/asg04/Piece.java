@@ -123,8 +123,8 @@ public class Piece {
 		}
 		//calculate bodyOfNewPiece TPoint array of the new piece
 		for(int i=0; i < body.length; i++) {
-			p[3-i].y = this.body[i].x;
-			p[3-i].x = this.body[i].y * (-1) + (height - 1);
+			p[i].y = this.body[i].x;
+			p[i].x = this.body[i].y * (-1) + (height - 1);
 		}
 		
 		return new Piece(p); // YOUR CODE HERE
@@ -241,11 +241,8 @@ public class Piece {
 		}
 		else 
 		{
-			Piece nextPiece = root.computeNextRotation();
-			root.next = nextPiece;
-			nextPiece.next = nextPiece.computeNextRotation();
-			root.computeNextRotation().next = root.computeNextRotation().computeNextRotation();
-			
+			Piece nextPiece = root;
+			nextPiece.next = root.computeNextRotation();
 			while( !nextPiece.next.equals(root)) {
 				nextPiece = nextPiece.next;
 				nextPiece.next = nextPiece.computeNextRotation();
