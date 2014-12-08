@@ -20,9 +20,8 @@ public class JBrainTetris extends JTetris {
 	
 	private JSlider Adversary;
 	private static JLabel status;
-	
 	Piece p;
-	private Piece[] pieces;
+	
 	public JBrainTetris(int pixels) {
 		super(pixels);
 	}
