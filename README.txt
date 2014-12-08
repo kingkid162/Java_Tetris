@@ -9,3 +9,5 @@ K58T
 - Project clone từ mẫu bitbucket của cô Châu https://bitbucket.org/chauttm/oop-asg04 .
 - Thêm code và Test để hoàn chỉnh prject , project có thể chạy được.
 
+- Piece và Board Update.
+- 12/8/2014 Update JBrainTetris và  Adversary có thể chạy được .
