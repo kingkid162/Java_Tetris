@@ -1,12 +1,13 @@
-// JTetris.java
 package oop.asg04;
 
+// JTetris.java
 import java.awt.*;
 import javax.swing.*;
 
 import java.util.*;
 import java.awt.event.*;
 import javax.swing.event.*;
+import oop.asg04.Board;
 
 import java.awt.Toolkit;
 
@@ -19,10 +20,13 @@ import java.awt.Toolkit;
  lower-level computations.
  This code is provided in finished, working form for the students.
  
+ 
  Use Keys j-k-l to move, n to drop (or 4-5-6 0)
  During animation, filled rows draw as green.
  Clearing 1-4 rows scores 5, 10, 20, 40 points.
  Clearing 4 rows at a time beeps!
+ 
+ 
 */
 
 /*
@@ -235,7 +239,7 @@ public class JTetris extends JComponent {
 	 Sets the enabling of the start/stop buttons
 	 based on the gameOn state.
 	*/
-	private void enableButtons() {
+	protected void enableButtons() {
 		startButton.setEnabled(!gameOn);
 		stopButton.setEnabled(gameOn);
 	}
@@ -337,7 +341,7 @@ public class JTetris extends JComponent {
 	/**
 	 Updates the count/score labels with the latest values.
 	 */
-	private void updateCounters() {
+	protected void updateCounters() {
 		countLabel.setText("Pieces " + count);
 		scoreLabel.setText("Score " + score);
 	}
@@ -551,7 +555,8 @@ public class JTetris extends JComponent {
 		
 		// Draw a rect around the whole thing
 		g.drawRect(0, 0, getWidth()-1, getHeight()-1);
-		
+		g.drawRect(2, 2, getWidth()-1, getHeight()-1);
+		g.drawRect(-2, -2, getWidth()-1, getHeight()-1);
 		
 		// Draw the line separating the top
 		int spacerY = yPixel(board.getHeight() - TOP_SPACE - 1);
@@ -728,4 +733,3 @@ public class JTetris extends JComponent {
 		frame.setVisible(true);
 	}
 }
-
