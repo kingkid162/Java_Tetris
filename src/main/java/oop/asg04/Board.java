@@ -115,15 +115,12 @@ public class Board	{
 	                	break;
 	                	}
 	            }
-	            
 	            if (heights[w]!=columnHeight)	throw new RuntimeException("Wrong! Heights[" +w+ "] "
 											+ "was " +columnHeight+ ", but was " +heights[w]);
 	            w++;
 	        }
 		}
-			// YOUR CODE HERE
 	}
-    
 	/**
 	 Given a piece and an x, returns the y
 	 value where the piece would come to rest
@@ -266,7 +263,7 @@ public class Board	{
 		return rowsCleared;
 }
 
-	private boolean[][] backUp() {
+	protected boolean[][] backUp() {
 		for (int i=0; i < width; i++) {
 			System.arraycopy(grid[i], 0, gridBak[i], 0, height);
 		}
